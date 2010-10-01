@@ -4,7 +4,10 @@ fwiki_fuse is a FUSE module that mounts a remote fwiki wiki as a directory, and 
 
 Using fwiki_fuse looks like this:
 
-    % cd my_awesome_wiki/; ls
+    % mkdir my_awesome_fwiki
+    % fwiki_fuse.rb fwiki.awesomecrap.com 80 cvonkleist p4ssw0rd my_awesome_fwiki/
+
+    % cd my_awesome_fwiki/; ls
     home
     ideas that are WIN
     my favorite movies
