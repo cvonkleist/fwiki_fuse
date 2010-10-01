@@ -1,0 +1,48 @@
+fwiki_fuse is a FUSE module that mounts a remote fwiki wiki as a directory, and each page in the wiki is a file.
+
+## Screenshot
+
+Using fwiki_fuse looks like this:
+
+    % cd my_awesome_wiki/; ls
+    home
+    ideas that are WIN
+    my favorite movies
+    things to do
+    yo mama jokes
+
+    % cat yo\ mama\ jokes
+    Yo mama so easy that in the many-worlds interpretation of quantum
+    mechanics, I've slept with her in every universe.
+
+    % echo '- eat moar lolcats' >> things\ to\ do
+    
+    % cat things\ to\ do
+    - eat lolcats
+    - eat moar lolcats
+
+    % echo zomg > OMGWTFBBQ; ls
+    OMGWTFBBQ
+    home
+    ideas that are WIN
+    my favorite movies
+    things to do
+    yo mama jokes
+
+## Requirements
+
+    gem install fusefs
+    gem install nokogiri
+
+## Usage
+
+    % ruby fwiki_fuse.rb host port username password mount_dir
+
+## Example usage
+
+So if your fwiki is at http://fwiki.awesomecrap.com/, your username is `cvk` and your password is `gibbons`, you could use fwiki_fuse like this:
+
+    % mkdir my_awesome_crap
+    % fwiki_fuse.rb fwiki.awesomecrap.com 80 cvk gibbons my_awesome_crap/
+
+TAADAAAA! Enjoy.
