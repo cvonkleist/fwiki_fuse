@@ -48,7 +48,7 @@ class FwikiFuse
 
   def can_write?(path)
     # prevent vim temp files
-    path[-1,1] == '~' ? false : true
+    path[-1,1] != '~'
   end
 
   def can_delete?(path)
