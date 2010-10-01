@@ -34,7 +34,6 @@ class FwikiFuse
   end
 
   def size(path)
-    #head(path, 'raw' => 'fishsticks').content_length
     sizes[path.path_to_title]
   end
 
